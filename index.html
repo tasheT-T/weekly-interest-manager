@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interests</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="site-header">
+            <h1>Your <em>interests,</em><br>by energy.</h1>
+            <p>Match what you do to how you feel — not how urgent it is.</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="interests">My Interests</button>
+            <button class="tab-btn" data-tab="week">This Week</button>
+            <button class="tab-btn" data-tab="today">Today</button>
+        </nav>
+
+        <!-- ── MY INTERESTS ────────────────────────── -->
+        <section class="panel active" id="panel-interests">
+            <div class="add-form">
+                <label>Add an interest</label>
+                <input type="text" id="interest-input" placeholder="e.g. Learning guitar, Reading, Drawing…"
+                    maxlength="60" />
+                <label>How much energy does it need?</label>
+                <div class="energy-selector">
+                    <div class="energy-opt">
+                        <input type="radio" name="energy" id="e-high" value="high" />
+                        <label for="e-high"><span class="icon">🔥</span> High</label>
+                    </div>
+                    <div class="energy-opt">
+                        <input type="radio" name="energy" id="e-med" value="medium" checked />
+                        <label for="e-med"><span class="icon">⚡</span> Medium</label>
+                    </div>
+                    <div class="energy-opt">
+                        <input type="radio" name="energy" id="e-low" value="low" />
+                        <label for="e-low"><span class="icon">🌿</span> Low</label>
+                    </div>
+                </div>
+                <button class="btn-primary" id="add-btn">Add Interest</button>
+            </div>
+
+            <div class="section-title">All Interests <span id="count-label"></span></div>
+            <div class="interests-list" id="interests-list"></div>
+        </section>
+
+        <!-- ── THIS WEEK ───────────────────────────── -->
+        <section class="panel" id="panel-week">
+            <div id="new-week-banner" class="new-week-banner" style="display:none">
+                <span>🗓️</span>
+                <div>New week — time to pick your <strong>2 focus interests</strong> for this week.</div>
+            </div>
+
+            <div class="week-header">
+                <div class="week-label">Week focus</div>
+                <div class="week-badge" id="week-badge">—</div>
+            </div>
+
+            <div id="current-focus-display"></div>
+
+            <div class="divider"></div>
+
+            <div class="section-title">Pick up to 2 interests</div>
+            <p class="pick-hint">Select <strong>two interests</strong> you'll work on this week. You can change them at
+                any time.</p>
+            <div class="pick-list" id="pick-list"></div>
+        </section>
+
+        <!-- ── TODAY ──────────────────────────────── -->
+        <section class="panel" id="panel-today">
+            <div class="today-date" id="today-date"></div>
+
+            <div class="energy-set-label">How's your energy today?</div>
+            <div class="energy-set">
+                <button class="energy-set-btn" data-level="high">
+                    <span class="icon">🔥</span> High
+                </button>
+                <button class="energy-set-btn" data-level="medium">
+                    <span class="icon">⚡</span> Medium
+                </button>
+                <button class="energy-set-btn" data-level="low">
+                    <span class="icon">🌿</span> Low
+                </button>
+            </div>
+
+            <div class="today-suggestions" id="today-suggestions">
+                <div class="no-energy-msg">Set your energy level above to see what's a good match today.</div>
+            </div>
+        </section>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+<div class="site-footer">
+    <footer>
+        <p>By <a class="footer-link" href="https://github.com/tasheT-T">tasheT-T</a></p>
+    </footer>
+</div>
+
+</html>
